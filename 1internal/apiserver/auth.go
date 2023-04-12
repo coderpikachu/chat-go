@@ -17,10 +17,10 @@ import (
 	metav1 "github.com/marmotedu/component-base/pkg/meta/v1"
 	"github.com/spf13/viper"
 
-	"test/00Chat1/1internal/apiserver/store"
-	"test/00Chat1/1internal/pkg/middleware"
-	"test/00Chat1/1internal/pkg/middleware/auth"
-	"test/00Chat1/2pkg/log"
+	"chat-go/1internal/apiserver/store"
+	"chat-go/1internal/pkg/middleware"
+	"chat-go/1internal/pkg/middleware/auth"
+	"chat-go/2pkg/log"
 )
 
 const (

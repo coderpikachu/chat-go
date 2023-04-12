@@ -2,4 +2,4 @@
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file.
 
-package validation // import "test/00Chat1/1internal/pkg/validation"
+package validation // import "chat-go/1internal/pkg/validation"

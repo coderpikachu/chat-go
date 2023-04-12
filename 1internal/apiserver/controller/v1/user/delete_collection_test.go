@@ -12,7 +12,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
 
-	srvv1 "test/00Chat1/1internal/apiserver/service/v1"
+	srvv1 "chat-go/1internal/apiserver/service/v1"
 )
 
 func TestUserController_DeleteCollection(t *testing.T) {

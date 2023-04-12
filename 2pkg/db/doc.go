@@ -3,4 +3,4 @@
 // license that can be found in the LICENSE file.
 
 // Package db provide useful functions to create mysql instance.
-package db // import "test/00Chat1/2pkg/db"
+package db // import "chat-go/2pkg/db"

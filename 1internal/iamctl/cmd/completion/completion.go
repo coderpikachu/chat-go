@@ -11,8 +11,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	cmdutil "test/00Chat1/1internal/iamctl/cmd/util"
-	"test/00Chat1/1internal/iamctl/util/templates"
+	cmdutil "chat-go/1internal/iamctl/cmd/util"
+	"chat-go/1internal/iamctl/util/templates"
 )
 
 const defaultBoilerPlate = `

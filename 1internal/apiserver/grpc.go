@@ -9,7 +9,7 @@ import (
 
 	"google.golang.org/grpc"
 
-	"test/00Chat1/2pkg/log"
+	"chat-go/2pkg/log"
 )
 
 type grpcAPIServer struct {

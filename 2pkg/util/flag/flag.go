@@ -11,7 +11,7 @@ import (
 
 	"github.com/spf13/pflag"
 
-	"test/00Chat1/2pkg/log"
+	"chat-go/2pkg/log"
 )
 
 // WordSepNormalizeFunc changes all flags that contain "_" separators.

@@ -9,11 +9,11 @@ import (
 	"github.com/marmotedu/component-base/pkg/core"
 	"github.com/marmotedu/errors"
 
-	"test/00Chat1/1internal/pkg/code"
-	"test/00Chat1/1internal/pkg/middleware/auth"
+	"chat-go/1internal/pkg/code"
+	"chat-go/1internal/pkg/middleware/auth"
 
 	// custom gin validators.
-	_ "test/00Chat1/2pkg/validator"
+	_ "chat-go/2pkg/validator"
 )
 
 func initRouter(g *gin.Engine) {

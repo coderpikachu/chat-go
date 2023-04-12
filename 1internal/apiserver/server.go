@@ -5,24 +5,24 @@
 package apiserver
 
 import (
+	"chat-go/1internal/apiserver/config"
 	"context"
 	"fmt"
-	"test/00Chat1/1internal/apiserver/config"
 
 	pb "github.com/marmotedu/api/proto/apiserver/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/reflection"
 
-	cachev1 "test/00Chat1/1internal/apiserver/controller/v1/cache"
-	"test/00Chat1/1internal/apiserver/store"
-	"test/00Chat1/1internal/apiserver/store/mysql"
-	genericoptions "test/00Chat1/1internal/pkg/options"
-	genericapiserver "test/00Chat1/1internal/pkg/server"
-	"test/00Chat1/2pkg/log"
-	"test/00Chat1/2pkg/shutdown"
-	"test/00Chat1/2pkg/shutdown/shutdownmanagers/posixsignal"
-	"test/00Chat1/2pkg/storage"
+	cachev1 "chat-go/1internal/apiserver/controller/v1/cache"
+	"chat-go/1internal/apiserver/store"
+	"chat-go/1internal/apiserver/store/mysql"
+	genericoptions "chat-go/1internal/pkg/options"
+	genericapiserver "chat-go/1internal/pkg/server"
+	"chat-go/2pkg/log"
+	"chat-go/2pkg/shutdown"
+	"chat-go/2pkg/shutdown/shutdownmanagers/posixsignal"
+	"chat-go/2pkg/storage"
 )
 
 type apiServer struct {

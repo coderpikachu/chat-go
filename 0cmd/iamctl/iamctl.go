@@ -8,7 +8,7 @@ package main
 import (
 	"os"
 
-	"test/00Chat1/1internal/iamctl/cmd"
+	"chat-go/1internal/iamctl/cmd"
 )
 
 func main() {

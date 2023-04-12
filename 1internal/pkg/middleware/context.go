@@ -7,7 +7,7 @@ package middleware
 import (
 	"github.com/gin-gonic/gin"
 
-	"test/00Chat1/2pkg/log"
+	"chat-go/2pkg/log"
 )
 
 // UsernameKey defines the key in gin context which represents the owner of the secret.

@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/pflag"
 	"gorm.io/gorm"
 
-	"test/00Chat1/2pkg/db"
+	"chat-go/2pkg/db"
 )
 
 // MySQLOptions defines options for mysql database.

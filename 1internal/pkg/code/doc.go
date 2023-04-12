@@ -11,4 +11,4 @@
 // StatusInternalServerError          = 500 // RFC 7231, 6.6.1
 
 // Package code defines error codes for iam platform.
-package code // import "test/00Chat1/1internal/pkg/code"
+package code // import "chat-go/1internal/pkg/code"

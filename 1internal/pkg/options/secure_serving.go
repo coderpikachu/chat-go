@@ -11,7 +11,7 @@ import (
 
 	"github.com/spf13/pflag"
 
-	"test/00Chat1/1internal/pkg/server"
+	"chat-go/1internal/pkg/server"
 )
 
 // SecureServingOptions contains configuration items related to HTTPS server startup.

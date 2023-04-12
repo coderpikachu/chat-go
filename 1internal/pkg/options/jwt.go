@@ -11,7 +11,7 @@ import (
 	"github.com/asaskevich/govalidator"
 	"github.com/spf13/pflag"
 
-	"test/00Chat1/1internal/pkg/server"
+	"chat-go/1internal/pkg/server"
 )
 
 // JwtOptions contains configuration items related to API server features.

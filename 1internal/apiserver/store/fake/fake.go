@@ -13,7 +13,7 @@ import (
 	"github.com/marmotedu/component-base/pkg/util/idutil"
 	"github.com/ory/ladon"
 
-	"test/00Chat1/1internal/apiserver/store"
+	"chat-go/1internal/apiserver/store"
 )
 
 // ResourceCount defines the number of fake resources.

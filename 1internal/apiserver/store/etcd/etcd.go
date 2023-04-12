@@ -16,9 +16,9 @@ import (
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"google.golang.org/grpc"
 
-	"test/00Chat1/1internal/apiserver/store"
-	genericoptions "test/00Chat1/1internal/pkg/options"
-	"test/00Chat1/2pkg/log"
+	"chat-go/1internal/apiserver/store"
+	genericoptions "chat-go/1internal/pkg/options"
+	"chat-go/2pkg/log"
 )
 
 // EtcdCreateEventFunc defines etcd create event function handler.

@@ -12,10 +12,10 @@ import (
 	"github.com/marmotedu/errors"
 	"gorm.io/gorm"
 
-	"test/00Chat1/1internal/apiserver/store"
-	"test/00Chat1/1internal/pkg/logger"
-	genericoptions "test/00Chat1/1internal/pkg/options"
-	"test/00Chat1/2pkg/db"
+	"chat-go/1internal/apiserver/store"
+	"chat-go/1internal/pkg/logger"
+	genericoptions "chat-go/1internal/pkg/options"
+	"chat-go/2pkg/db"
 )
 
 type datastore struct {

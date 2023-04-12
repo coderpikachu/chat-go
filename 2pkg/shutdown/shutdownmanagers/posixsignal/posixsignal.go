@@ -14,7 +14,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"test/00Chat1/2pkg/shutdown"
+	"chat-go/2pkg/shutdown"
 )
 
 // Name defines shutdown manager name.

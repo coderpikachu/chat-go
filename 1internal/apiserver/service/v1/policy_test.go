@@ -14,8 +14,8 @@ import (
 	metav1 "github.com/marmotedu/component-base/pkg/meta/v1"
 	"github.com/stretchr/testify/suite"
 
-	"test/00Chat1/1internal/apiserver/store"
-	"test/00Chat1/1internal/apiserver/store/fake"
+	"chat-go/1internal/apiserver/store"
+	"chat-go/1internal/apiserver/store/fake"
 )
 
 type Suite struct {

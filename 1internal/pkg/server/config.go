@@ -15,7 +15,7 @@ import (
 	"github.com/marmotedu/component-base/pkg/util/homedir"
 	"github.com/spf13/viper"
 
-	"test/00Chat1/2pkg/log"
+	"chat-go/2pkg/log"
 )
 
 const (
@@ -79,7 +79,7 @@ type JwtInfo struct {
 // NewConfig returns a Config struct with the default values.
 func NewConfig() *Config {
 	return &Config{
-		Healthz:         true,
+		Healthz:         false,
 		Mode:            gin.ReleaseMode,
 		Middlewares:     []string{},
 		EnableProfiling: true,

@@ -14,7 +14,7 @@ import (
 	"github.com/spf13/cobra"
 	flag "github.com/spf13/pflag"
 
-	"test/00Chat1/1internal/iamctl/util/term"
+	"chat-go/1internal/iamctl/util/term"
 )
 
 type FlagExposer interface {

@@ -14,9 +14,9 @@ import (
 	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 
-	cmdutil "test/00Chat1/1internal/iamctl/cmd/util"
-	"test/00Chat1/1internal/iamctl/util/templates"
-	"test/00Chat1/2pkg/cli/genericclioptions"
+	cmdutil "chat-go/1internal/iamctl/cmd/util"
+	"chat-go/1internal/iamctl/util/templates"
+	"chat-go/2pkg/cli/genericclioptions"
 )
 
 const (

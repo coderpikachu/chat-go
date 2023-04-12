@@ -13,8 +13,8 @@ import (
 	"github.com/marmotedu/errors"
 	"gorm.io/gorm"
 
-	"test/00Chat1/1internal/pkg/code"
-	"test/00Chat1/1internal/pkg/util/gormutil"
+	"chat-go/1internal/pkg/code"
+	"chat-go/1internal/pkg/util/gormutil"
 )
 
 type secrets struct {

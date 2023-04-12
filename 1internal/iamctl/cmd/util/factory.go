@@ -8,7 +8,7 @@ import (
 	"github.com/marmotedu/marmotedu-sdk-go/marmotedu/service/iam"
 	restclient "github.com/marmotedu/marmotedu-sdk-go/rest"
 
-	"test/00Chat1/2pkg/cli/genericclioptions"
+	"chat-go/2pkg/cli/genericclioptions"
 )
 
 // Factory provides abstractions that allow the IAM command to be extended across multiple types

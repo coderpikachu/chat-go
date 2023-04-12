@@ -10,7 +10,7 @@ import (
 
 	gomock "github.com/golang/mock/gomock"
 
-	"test/00Chat1/1internal/apiserver/store"
+	"chat-go/1internal/apiserver/store"
 )
 
 func TestNewService(t *testing.T) {

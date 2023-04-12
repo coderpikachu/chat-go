@@ -13,9 +13,9 @@ import (
 	metav1 "github.com/marmotedu/component-base/pkg/meta/v1"
 	"github.com/marmotedu/errors"
 
-	"test/00Chat1/1internal/apiserver/store"
-	"test/00Chat1/1internal/pkg/code"
-	"test/00Chat1/2pkg/log"
+	"chat-go/1internal/apiserver/store"
+	"chat-go/1internal/pkg/code"
+	"chat-go/2pkg/log"
 )
 
 // UserSrv defines functions used to handle user request.

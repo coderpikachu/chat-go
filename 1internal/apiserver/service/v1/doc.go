@@ -3,4 +3,4 @@
 // license that can be found in the LICENSE file.
 
 // Package v1 is the place where you can implements more complex business logic.
-package v1 // import "test/00Chat1/1internal/apiserver/service/v1"
+package v1 // import "chat-go/1internal/apiserver/service/v1"

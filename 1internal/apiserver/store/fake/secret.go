@@ -14,9 +14,9 @@ import (
 	"github.com/marmotedu/component-base/pkg/util/stringutil"
 	"github.com/marmotedu/errors"
 
-	"test/00Chat1/1internal/pkg/code"
-	"test/00Chat1/1internal/pkg/util/gormutil"
-	reflectutil "test/00Chat1/1internal/pkg/util/reflect"
+	"chat-go/1internal/pkg/code"
+	"chat-go/1internal/pkg/util/gormutil"
+	reflectutil "chat-go/1internal/pkg/util/reflect"
 )
 
 type secrets struct {

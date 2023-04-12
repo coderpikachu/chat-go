@@ -8,7 +8,7 @@ package server
 import (
 	"net/http"
 
-	"test/00Chat1/2pkg/log"
+	"chat-go/2pkg/log"
 )
 
 // ServeHealthCheck runs a http server used to provide a api to check pump health status.

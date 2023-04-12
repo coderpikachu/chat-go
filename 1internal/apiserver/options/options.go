@@ -10,9 +10,9 @@ import (
 	"github.com/marmotedu/component-base/pkg/json"
 	"github.com/marmotedu/component-base/pkg/util/idutil"
 
-	genericoptions "test/00Chat1/1internal/pkg/options"
-	"test/00Chat1/1internal/pkg/server"
-	"test/00Chat1/2pkg/log"
+	genericoptions "chat-go/1internal/pkg/options"
+	"chat-go/1internal/pkg/server"
+	"chat-go/2pkg/log"
 )
 
 // Options runs an iam api server.

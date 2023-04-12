@@ -5,7 +5,7 @@
 package main
 
 import (
-	"test/00Chat1/2pkg/log"
+	"chat-go/2pkg/log"
 )
 
 func main() {

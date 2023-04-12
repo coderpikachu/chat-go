@@ -4,7 +4,7 @@
 
 package apiserver
 
-import "test/00Chat1/1internal/apiserver/config"
+import "chat-go/1internal/apiserver/config"
 
 // Run runs the specified APIServer. This should never exit.
 func Run(cfg *config.Config) error {

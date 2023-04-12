@@ -5,8 +5,8 @@
 package secret
 
 import (
-	srvv1 "test/00Chat1/1internal/apiserver/service/v1"
-	"test/00Chat1/1internal/apiserver/store"
+	srvv1 "chat-go/1internal/apiserver/service/v1"
+	"chat-go/1internal/apiserver/store"
 )
 
 // SecretController create a secret handler used to handle request for secret resource.

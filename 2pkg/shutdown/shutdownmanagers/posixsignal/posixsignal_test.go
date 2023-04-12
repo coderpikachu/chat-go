@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"test/00Chat1/2pkg/shutdown"
+	"chat-go/2pkg/shutdown"
 )
 
 type startShutdownFunc func(sm shutdown.ShutdownManager)

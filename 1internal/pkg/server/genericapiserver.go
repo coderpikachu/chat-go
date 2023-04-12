@@ -19,8 +19,8 @@ import (
 	ginprometheus "github.com/zsais/go-gin-prometheus"
 	"golang.org/x/sync/errgroup"
 
-	"test/00Chat1/1internal/pkg/middleware"
-	"test/00Chat1/2pkg/log"
+	"chat-go/1internal/pkg/middleware"
+	"chat-go/2pkg/log"
 )
 
 // GenericAPIServer contains state for an iam api server.

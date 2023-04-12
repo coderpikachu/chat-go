@@ -5,8 +5,8 @@
 package policy
 
 import (
-	srvv1 "test/00Chat1/1internal/apiserver/service/v1"
-	"test/00Chat1/1internal/apiserver/store"
+	srvv1 "chat-go/1internal/apiserver/service/v1"
+	"chat-go/1internal/apiserver/store"
 )
 
 // PolicyController create a policy handler used to handle request for policy resource.

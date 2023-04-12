@@ -9,7 +9,7 @@ Installation
 
 To install run:
 
-	go get test/00Chat1/2pkg/shutdown
+	go get chat-go/2pkg/shutdown
 
 Example - posix signals
 
@@ -22,8 +22,8 @@ When callbacks return, the application will exit with os.Exit(0)
 		"fmt"
 		"time"
 
-		"test/00Chat1/2pkg/shutdown"
-		"test/00Chat1/2pkg/shutdown/shutdownmanagers/posixsignal"
+		"chat-go/2pkg/shutdown"
+		"chat-go/2pkg/shutdown/shutdownmanagers/posixsignal"
 	)
 
 	func main() {
@@ -63,8 +63,8 @@ error returned from ShutdownCallback.
 		"time"
 		"errors"
 
-		"test/00Chat1/2pkg/shutdown"
-		"test/00Chat1/2pkg/shutdown/shutdownmanagers/posixsignal"
+		"chat-go/2pkg/shutdown"
+		"chat-go/2pkg/shutdown/shutdownmanagers/posixsignal"
 	)
 
 	func main() {
@@ -114,9 +114,9 @@ message to correct instance via http on port 7999.
 		"fmt"
 		"time"
 
-		"test/00Chat1/2pkg/shutdown"
-		"test/00Chat1/2pkg/shutdown/shutdownmanagers/awsmanager"
-		"test/00Chat1/2pkg/shutdown/shutdownmanagers/posixsignal"
+		"chat-go/2pkg/shutdown"
+		"chat-go/2pkg/shutdown/shutdownmanagers/awsmanager"
+		"chat-go/2pkg/shutdown/shutdownmanagers/posixsignal"
 	)
 
 	func main() {

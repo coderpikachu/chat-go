@@ -4,7 +4,7 @@
 
 package config
 
-import "test/00Chat1/1internal/apiserver/options"
+import "chat-go/1internal/apiserver/options"
 
 // Config is the running configuration structure of the IAM pump service.
 type Config struct {

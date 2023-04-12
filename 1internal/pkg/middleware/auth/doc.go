@@ -3,4 +3,4 @@
 // license that can be found in the LICENSE file.
 
 // Package auth defines authentication strategy like Basic, Bearer.
-package auth // import "test/00Chat1/1internal/pkg/middleware/auth"
+package auth // import "chat-go/1internal/pkg/middleware/auth"

@@ -10,7 +10,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"test/00Chat1/1internal/iamctl/util/templates"
+	"chat-go/1internal/iamctl/util/templates"
 )
 
 var optionsExample = templates.Examples(`

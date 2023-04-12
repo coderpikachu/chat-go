@@ -9,8 +9,8 @@ import (
 	"github.com/marmotedu/component-base/pkg/core"
 	metav1 "github.com/marmotedu/component-base/pkg/meta/v1"
 
-	"test/00Chat1/1internal/pkg/middleware"
-	"test/00Chat1/2pkg/log"
+	"chat-go/1internal/pkg/middleware"
+	"chat-go/2pkg/log"
 )
 
 // DeleteCollection delete secrets by secret names.

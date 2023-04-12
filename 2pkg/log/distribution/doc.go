@@ -2,4 +2,4 @@
 // Use of this source code is governed by a MIT style
 // license that can be found in the LICENSE file.
 
-package distribution // import "test/00Chat1/2pkg/log/distribution"
+package distribution // import "chat-go/2pkg/log/distribution"

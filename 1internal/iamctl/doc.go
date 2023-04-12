@@ -6,4 +6,4 @@
 // under github.com/marmotedu/iam/cmd. The functions are kept in this package to better
 // support unit testing. The main() method for iamctl is only an entry point
 // and should contain no functionality.
-package iamctl // import "test/00Chat1/1internal/iamctl"
+package iamctl // import "chat-go/1internal/iamctl"

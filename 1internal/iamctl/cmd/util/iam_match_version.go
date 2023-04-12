@@ -16,7 +16,7 @@ import (
 	"github.com/marmotedu/marmotedu-sdk-go/tools/clientcmd"
 	"github.com/spf13/pflag"
 
-	"test/00Chat1/2pkg/cli/genericclioptions"
+	"chat-go/2pkg/cli/genericclioptions"
 )
 
 const (

@@ -13,7 +13,7 @@ import (
 	v1 "github.com/marmotedu/api/apiserver/v1"
 	metav1 "github.com/marmotedu/component-base/pkg/meta/v1"
 
-	"test/00Chat1/1internal/apiserver/store"
+	"chat-go/1internal/apiserver/store"
 )
 
 func (s *Suite) Test_secretService_Create() {

@@ -6,10 +6,10 @@
 package apiserver
 
 import (
-	"test/00Chat1/1internal/apiserver/config"
-	"test/00Chat1/1internal/apiserver/options"
-	"test/00Chat1/2pkg/app"
-	"test/00Chat1/2pkg/log"
+	"chat-go/1internal/apiserver/config"
+	"chat-go/1internal/apiserver/options"
+	"chat-go/2pkg/app"
+	"chat-go/2pkg/log"
 )
 
 const commandDesc = `The IAM API server validates and configures data

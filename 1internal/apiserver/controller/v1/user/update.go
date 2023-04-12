@@ -11,8 +11,8 @@ import (
 	metav1 "github.com/marmotedu/component-base/pkg/meta/v1"
 	"github.com/marmotedu/errors"
 
-	"test/00Chat1/1internal/pkg/code"
-	"test/00Chat1/2pkg/log"
+	"chat-go/1internal/pkg/code"
+	"chat-go/2pkg/log"
 )
 
 // Update update a user info by the user identifier.

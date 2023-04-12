@@ -13,9 +13,9 @@ import (
 	"github.com/marmotedu/component-base/pkg/util/idutil"
 	"github.com/marmotedu/errors"
 
-	"test/00Chat1/1internal/pkg/code"
-	"test/00Chat1/1internal/pkg/middleware"
-	"test/00Chat1/2pkg/log"
+	"chat-go/1internal/pkg/code"
+	"chat-go/1internal/pkg/middleware"
+	"chat-go/2pkg/log"
 )
 
 const maxSecretCount = 10
