@@ -47,13 +47,13 @@ readonly MONGO_PORT=${MONGO_PORT:-27017} # MongoDB 端口
 readonly MONGO_USERNAME=${MONGO_USERNAME:-iam} # MongoDB 用户名
 readonly MONGO_PASSWORD=${MONGO_PASSWORD:-${PASSWORD}} # MongoDB 密码
 
-readonly USER=${USER:-/home/${LINUX_USERNAME}/dir}
+USER=${USER:-/home/${LINUX_USERNAME}/dir}
 # iam 配置
-readonly IAM_DATA_DIR=${IAM_DATA_DIR:-${USER}/data/iam} # iam 各组件数据目录
-readonly IAM_INSTALL_DIR=${IAM_INSTALL_DIR:-${USER}/opt/iam} # iam 安装文件存放目录
-readonly IAM_CONFIG_DIR=${IAM_CONFIG_DIR:-${USER}/etc/iam} # iam 配置文件存放目录
-readonly IAM_LOG_DIR=${IAM_LOG_DIR:-${USER}/var/log/iam} # iam 日志文件存放目录
-readonly CA_FILE=${CA_FILE:-${IAM_CONFIG_DIR}/cert/ca.pem} # CA
+IAM_DATA_DIR=${IAM_DATA_DIR:-${USER}/data/iam} # iam 各组件数据目录
+IAM_INSTALL_DIR=${IAM_INSTALL_DIR:-${USER}/opt/iam} # iam 安装文件存放目录
+IAM_CONFIG_DIR=${IAM_CONFIG_DIR:-${USER}/etc/iam} # iam 配置文件存放目录
+IAM_LOG_DIR=${IAM_LOG_DIR:-${USER}/var/log/iam} # iam 日志文件存放目录
+CA_FILE=${CA_FILE:-${IAM_CONFIG_DIR}/cert/ca.pem} # CA
 
 # iam-apiserver 配置
 readonly IAM_APISERVER_HOST=${IAM_APISERVER_HOST:-127.0.0.1} # iam-apiserver 部署机器 IP 地址

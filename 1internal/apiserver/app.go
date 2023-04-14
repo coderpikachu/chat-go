@@ -12,7 +12,7 @@ import (
 	"chat-go/2pkg/log"
 )
 
-const commandDesc = `The IAM API server validates and configures data
+const commandDesc = `The CHAT API server validates and configures data
 for the api objects which include users, policies, secrets, and
 others. The API Server services REST operations to do the api objects management.
 

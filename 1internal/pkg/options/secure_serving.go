@@ -10,8 +10,7 @@ import (
 	"path"
 
 	"github.com/spf13/pflag"
-
-	"chat-go/1internal/pkg/server"
+	_ "github.com/spf13/pflag"
 )
 
 // SecureServingOptions contains configuration items related to HTTPS server startup.
@@ -62,19 +61,19 @@ func NewSecureServingOptions() *SecureServingOptions {
 }
 
 // ApplyTo applies the run options to the method receiver and returns self.
-func (s *SecureServingOptions) ApplyTo(c *server.Config) error {
-	// SecureServing is required to serve https
-	c.SecureServing = &server.SecureServingInfo{
-		BindAddress: s.BindAddress,
-		BindPort:    s.BindPort,
-		CertKey: server.CertKey{
-			CertFile: s.ServerCert.CertKey.CertFile,
-			KeyFile:  s.ServerCert.CertKey.KeyFile,
-		},
-	}
+// func (s *SecureServingOptions) ApplyTo(c *server.Config) error {
+// 	// SecureServing is required to serve https
+// 	c.SecureServing = &server.SecureServingInfo{
+// 		BindAddress: s.BindAddress,
+// 		BindPort:    s.BindPort,
+// 		CertKey: server.CertKey{
+// 			CertFile: s.ServerCert.CertKey.CertFile,
+// 			KeyFile:  s.ServerCert.CertKey.KeyFile,
+// 		},
+// 	}
 
-	return nil
-}
+// 	return nil
+// }
 
 // Validate is used to parse and validate the parameters entered by the user at
 // the command line when the program starts.

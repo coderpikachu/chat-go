@@ -29,7 +29,7 @@ const (
 // Config is a structure used to configure a GenericAPIServer.
 // Its members are sorted roughly in order of importance for composers.
 type Config struct {
-	SecureServing   *SecureServingInfo
+	//SecureServing   *SecureServingInfo
 	InsecureServing *InsecureServingInfo
 	Jwt             *JwtInfo
 	Mode            string
@@ -109,7 +109,7 @@ func (c CompletedConfig) New() (*GenericAPIServer, error) {
 	gin.SetMode(c.Mode)
 
 	s := &GenericAPIServer{
-		SecureServingInfo:   c.SecureServing,
+		// SecureServingInfo:   c.SecureServing,
 		InsecureServingInfo: c.InsecureServing,
 		healthz:             c.Healthz,
 		enableMetrics:       c.EnableMetrics,

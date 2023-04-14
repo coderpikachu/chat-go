@@ -34,12 +34,12 @@ func NewOptions() *Options {
 		GenericServerRunOptions: genericoptions.NewServerRunOptions(),
 		GRPCOptions:             genericoptions.NewGRPCOptions(),
 		InsecureServing:         genericoptions.NewInsecureServingOptions(),
-		SecureServing:           genericoptions.NewSecureServingOptions(),
-		MySQLOptions:            genericoptions.NewMySQLOptions(),
-		RedisOptions:            genericoptions.NewRedisOptions(),
-		JwtOptions:              genericoptions.NewJwtOptions(),
-		Log:                     log.NewOptions(),
-		FeatureOptions:          genericoptions.NewFeatureOptions(),
+		//SecureServing:           genericoptions.NewSecureServingOptions(),
+		MySQLOptions:   genericoptions.NewMySQLOptions(),
+		RedisOptions:   genericoptions.NewRedisOptions(),
+		JwtOptions:     genericoptions.NewJwtOptions(),
+		Log:            log.NewOptions(),
+		FeatureOptions: genericoptions.NewFeatureOptions(),
 	}
 
 	return &o

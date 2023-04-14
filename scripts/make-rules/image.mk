@@ -23,14 +23,14 @@ ifneq ($(EXTRA_ARGS), )
 _DOCKER_BUILD_EXTRA_ARGS += $(EXTRA_ARGS)
 endif
 
-# Determine image files by looking into build/docker/*/Dockerfile
-IMAGES_DIR ?= $(wildcard ${ROOT_DIR}/build/docker/*)
-# Determine images names by stripping out the dir names
-IMAGES ?= $(filter-out tools,$(foreach image,${IMAGES_DIR},$(notdir ${image})))
+# # Determine image files by looking into build/docker/*/Dockerfile
+# IMAGES_DIR ?= $(wildcard ${ROOT_DIR}/build/docker/*)
+# # Determine images names by stripping out the dir names
+# IMAGES ?= $(filter-out tools,$(foreach image,${IMAGES_DIR},$(notdir ${image})))
 
-ifeq (${IMAGES},)
-  $(error Could not determine IMAGES, set ROOT_DIR or run in source dir)
-endif
+# ifeq (${IMAGES},)
+#   $(error Could not determine IMAGES, set ROOT_DIR or run in source dir)
+# endif
 
 .PHONY: image.verify
 image.verify:
