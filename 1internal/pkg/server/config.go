@@ -130,6 +130,8 @@ func LoadConfig(cfg string, defaultName string) {
 	} else {
 		viper.AddConfigPath(".")
 		viper.AddConfigPath(filepath.Join(homedir.HomeDir(), RecommendedHomeDir))
+		log.Errorf("home: %s", filepath.Join(homedir.HomeDir(), RecommendedHomeDir))
+		log.Errorf("home1: %s", homedir.HomeDir())
 		viper.AddConfigPath("/etc/iam")
 		viper.SetConfigName(defaultName)
 	}

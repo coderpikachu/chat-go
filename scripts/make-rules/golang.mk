@@ -32,7 +32,7 @@ ifeq ($(origin GOBIN), undefined)
 endif
 
 COMMANDS ?= $(filter-out %.md, $(wildcard ${ROOT_DIR}/0cmd/*))
-BINS ?= $(foreach 0cmd,${COMMANDS},$(notdir ${cmd}))
+BINS ?= $(foreach cmd,${COMMANDS},$(notdir ${cmd}))
 
 ifeq (${COMMANDS},)
   $(error Could not determine COMMANDS, set ROOT_DIR or run in source dir)
