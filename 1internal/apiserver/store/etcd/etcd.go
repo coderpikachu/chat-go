@@ -5,20 +5,20 @@
 package etcd
 
 import (
+	"chat-go/1internal/apiserver/store"
+	genericoptions "chat-go/1internal/pkg/options"
 	"context"
 	"crypto/tls"
 	"fmt"
 	"sync"
 	"time"
 
+	"chat-go/2pkg/log"
+
 	"github.com/marmotedu/errors"
 	"go.etcd.io/etcd/api/v3/mvccpb"
 	clientv3 "go.etcd.io/etcd/client/v3"
 	"google.golang.org/grpc"
-
-	"chat-go/1internal/apiserver/store"
-	genericoptions "chat-go/1internal/pkg/options"
-	"chat-go/2pkg/log"
 )
 
 // EtcdCreateEventFunc defines etcd create event function handler.
@@ -51,18 +51,6 @@ type datastore struct {
 
 func (ds *datastore) Users() store.UserStore {
 	return newUsers(ds)
-}
-
-func (ds *datastore) Secrets() store.SecretStore {
-	return newSecrets(ds)
-}
-
-func (ds *datastore) Policies() store.PolicyStore {
-	return newPolicies(ds)
-}
-
-func (ds *datastore) PolicyAudits() store.PolicyAuditStore {
-	return newPolicyAudits(ds)
 }
 
 // Close clsoe the etcdStore clinet.

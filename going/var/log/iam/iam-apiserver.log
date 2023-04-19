@@ -1,128 +1,59 @@
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: recovery
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: logger
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: secure
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: nocache
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: cors
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: dump
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /healthz --> github.com/marmotedu/iam/internal/pkg/server.(*GenericAPIServer).InstallAPIs.func1 (9 handlers)
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /metrics --> github.com/zsais/go-gin-prometheus.prometheusHandler.func1 (10 handlers)
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/ --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/cmdline --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/profile --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /debug/pprof/symbol --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-14 15:08:44.025	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/symbol --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-14 15:08:44.026	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/trace --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-14 15:08:44.026	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/allocs --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-14 15:08:44.026	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/block --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-14 15:08:44.026	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/goroutine --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-14 15:08:44.026	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/heap --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-14 15:08:44.026	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/mutex --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-14 15:08:44.026	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/threadcreate --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-14 15:08:44.026	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /version --> github.com/marmotedu/iam/internal/pkg/server.(*GenericAPIServer).InstallAPIs.func2 (10 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /login --> github.com/appleboy/gin-jwt/v2.(*GinJWTMiddleware).LoginHandler-fm (10 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /logout --> github.com/appleboy/gin-jwt/v2.(*GinJWTMiddleware).LogoutHandler-fm (10 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /refresh --> github.com/appleboy/gin-jwt/v2.(*GinJWTMiddleware).RefreshHandler-fm (10 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /v1/users --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Create-fm (10 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/users --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).DeleteCollection-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/users/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Delete-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/users/:name/change-password --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).ChangePassword-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/users/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Update-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/users --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).List-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/users/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Get-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /v1/policies --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Create-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/policies --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).DeleteCollection-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/policies/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Delete-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/policies/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Update-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/policies --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).List-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/policies/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Get-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /v1/secrets --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Create-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/secrets/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Delete-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/secrets/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Update-fm (12 handlers)
-2023-04-14 15:08:44.034	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/secrets --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).List-fm (12 handlers)
-2023-04-14 15:08:44.035	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/secrets/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Get-fm (12 handlers)
-2023-04-14 15:08:44.035	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:100	Connecting to redis cluster
-2023-04-14 15:08:44.035	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:189	Creating new Redis connection pool
-2023-04-14 15:08:44.035	[34mINFO[0m	apiserver	storage/redis_cluster.go:232	--> [REDIS] Creating single-node client
-2023-04-14 15:08:44.038	[34mINFO[0m	apiserver	server/genericapiserver.go:236	Waiting for the router, retry in 1 second.
-2023-04-14 15:08:44.038	[34mINFO[0m	apiserver	server/genericapiserver.go:147	Start to listening the incoming requests on http address: 127.0.0.1:8080
-2023-04-14 15:08:44.038	[34mINFO[0m	apiserver	server/genericapiserver.go:166	Start to listening the incoming requests on https address: 0.0.0.0:8443
-2023-04-14 15:08:44.039	[34mINFO[0m	apiserver	apiserver/grpc.go:32	start grpc server at 0.0.0.0:8081
-2023-04-14 15:08:44.044	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:100	Connecting to redis cluster
-2023-04-14 15:08:44.044	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:189	Creating new Redis connection pool
-2023-04-14 15:08:44.045	[34mINFO[0m	apiserver	storage/redis_cluster.go:232	--> [REDIS] Creating single-node client
-2023-04-14 15:08:45.039	[34mINFO[0m	apiserver	middleware/logger.go:134	200 - [127.0.0.1] "248.677µs GET /healthz" 	{"requestID": "efc64219-756e-47b4-bf83-d438af1f0d5d", "username": ""}
-2023-04-14 15:08:45.039	[34mINFO[0m	apiserver	server/genericapiserver.go:228	The router has been deployed successfully.
-2023-04-14 15:12:35.120	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:76][67.420ms] [rows:1] SELECT * FROM `user` WHERE name = 'admin' and status = 1 ORDER BY `user`.`id` LIMIT 1
-2023-04-14 15:12:35.202	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:35][11.855ms] [rows:1] UPDATE `user` SET `instanceID`='user-lingfei',`name`='admin',`extendShadow`='{}',`createdAt`='2021-05-27 18:01:40',`updatedAt`='2023-04-14 15:12:35.192',`status`=1,`nickname`='admin',`password`='$2a$10$WnQD2DCfWVhlGmkQ8pdLkesIGPf9KJB7N1mhSOqulbgN7ZMo44Mv2',`email`='admin@foxmail.com',`phone`='1812884xxxx',`isAdmin`=1,`loginedAt`='2023-04-14 15:12:35.19' WHERE `id` = 1
-2023-04-14 15:12:35.203	[34mINFO[0m	apiserver	middleware/logger.go:134	200 - [127.0.0.1] "150.275526ms POST /login" 	{"requestID": "63635c37-8030-4d3f-bbce-cdcc6e8fa9f9", "username": ""}
-2023-04-16 15:31:29.699	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	mysql/user.go:76 SLOW SQL >= 200ms[254.751ms] [rows:1] SELECT * FROM `user` WHERE name = 'admin' and status = 1 ORDER BY `user`.`id` LIMIT 1
-2023-04-16 15:31:29.808	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:35][35.076ms] [rows:1] UPDATE `user` SET `instanceID`='user-lingfei',`name`='admin',`extendShadow`='{}',`createdAt`='2021-05-27 18:01:40',`updatedAt`='2023-04-16 15:31:29.773',`status`=1,`nickname`='admin',`password`='$2a$10$WnQD2DCfWVhlGmkQ8pdLkesIGPf9KJB7N1mhSOqulbgN7ZMo44Mv2',`email`='admin@foxmail.com',`phone`='1812884xxxx',`isAdmin`=1,`loginedAt`='2023-04-16 15:31:29.771' WHERE `id` = 1
-2023-04-16 15:31:29.815	[34mINFO[0m	apiserver	middleware/logger.go:134	200 - [127.0.0.1] "378.489265ms POST /login" 	{"requestID": "1dc40166-4766-485f-af77-c1f1c0b7aecf", "username": ""}
-2023-04-16 15:31:35.636	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:76][1.833ms] [rows:1] SELECT * FROM `user` WHERE name = 'admin' and status = 1 ORDER BY `user`.`id` LIMIT 1
-2023-04-16 15:31:35.719	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:35][12.125ms] [rows:1] UPDATE `user` SET `instanceID`='user-lingfei',`name`='admin',`extendShadow`='{}',`createdAt`='2021-05-27 18:01:40',`updatedAt`='2023-04-16 15:31:35.713',`status`=1,`nickname`='admin',`password`='$2a$10$WnQD2DCfWVhlGmkQ8pdLkesIGPf9KJB7N1mhSOqulbgN7ZMo44Mv2',`email`='admin@foxmail.com',`phone`='1812884xxxx',`isAdmin`=1,`loginedAt`='2023-04-16 15:31:35.706' WHERE `id` = 1
-2023-04-16 15:31:35.723	[34mINFO[0m	apiserver	middleware/logger.go:134	200 - [127.0.0.1] "89.010124ms POST /login" 	{"requestID": "d0d2cc62-619b-4bbb-b28a-9e59f52db7d2", "username": ""}
-2023-04-16 16:07:08.159	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:76][2.411ms] [rows:1] SELECT * FROM `user` WHERE name = 'admin' and status = 1 ORDER BY `user`.`id` LIMIT 1
-2023-04-16 16:07:08.235	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:35][6.365ms] [rows:1] UPDATE `user` SET `instanceID`='user-lingfei',`name`='admin',`extendShadow`='{}',`createdAt`='2021-05-27 18:01:40',`updatedAt`='2023-04-16 16:07:08.231',`status`=1,`nickname`='admin',`password`='$2a$10$WnQD2DCfWVhlGmkQ8pdLkesIGPf9KJB7N1mhSOqulbgN7ZMo44Mv2',`email`='admin@foxmail.com',`phone`='1812884xxxx',`isAdmin`=1,`loginedAt`='2023-04-16 16:07:08.229' WHERE `id` = 1
-2023-04-16 16:07:08.236	[34mINFO[0m	apiserver	middleware/logger.go:134	200 - [127.0.0.1] "81.540851ms POST /login" 	{"requestID": "78e208da-ffe2-4789-b082-3c24f517250f", "username": ""}
-2023-04-16 16:07:23.820	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:76][0.812ms] [rows:1] SELECT * FROM `user` WHERE name = 'admin' and status = 1 ORDER BY `user`.`id` LIMIT 1
-2023-04-16 16:07:23.895	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:35][3.794ms] [rows:1] UPDATE `user` SET `instanceID`='user-lingfei',`name`='admin',`extendShadow`='{}',`createdAt`='2021-05-27 18:01:40',`updatedAt`='2023-04-16 16:07:23.892',`status`=1,`nickname`='admin',`password`='$2a$10$WnQD2DCfWVhlGmkQ8pdLkesIGPf9KJB7N1mhSOqulbgN7ZMo44Mv2',`email`='admin@foxmail.com',`phone`='1812884xxxx',`isAdmin`=1,`loginedAt`='2023-04-16 16:07:23.892' WHERE `id` = 1
-2023-04-16 16:07:23.897	[34mINFO[0m	apiserver	middleware/logger.go:134	200 - [127.0.0.1] "79.583685ms POST /login" 	{"requestID": "bf114188-e1ad-4498-a69a-d2eff9017462", "username": ""}
-2023-04-18 17:53:46.111	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:76][115.365ms] [rows:1] SELECT * FROM `user` WHERE name = 'admin' and status = 1 ORDER BY `user`.`id` LIMIT 1
-2023-04-18 17:53:46.199	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:35][14.986ms] [rows:1] UPDATE `user` SET `instanceID`='user-lingfei',`name`='admin',`extendShadow`='{}',`createdAt`='2021-05-27 18:01:40',`updatedAt`='2023-04-18 17:53:46.185',`status`=1,`nickname`='admin',`password`='$2a$10$WnQD2DCfWVhlGmkQ8pdLkesIGPf9KJB7N1mhSOqulbgN7ZMo44Mv2',`email`='admin@foxmail.com',`phone`='1812884xxxx',`isAdmin`=1,`loginedAt`='2023-04-18 17:53:46.184' WHERE `id` = 1
-2023-04-18 17:53:46.200	[34mINFO[0m	apiserver	middleware/logger.go:134	200 - [127.0.0.1] "206.129144ms POST /login" 	{"requestID": "3302ce43-6796-4df3-b5de-fad05fb8323c", "username": ""}
-2023-04-18 17:54:42.925	[34mINFO[0m	apiserver	apiserver/grpc.go:37	GRPC server on 0.0.0.0:8081 stopped
-2023-04-18 17:54:42.925	[34mINFO[0m	apiserver	server/genericapiserver.go:174	Server on 0.0.0.0:8443 stopped
-2023-04-18 17:54:42.927	[34mINFO[0m	apiserver	server/genericapiserver.go:155	Server on 127.0.0.1:8080 stopped
-2023-04-18 17:54:43.008	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: recovery
-2023-04-18 17:54:43.008	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: logger
-2023-04-18 17:54:43.008	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: secure
-2023-04-18 17:54:43.008	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: nocache
-2023-04-18 17:54:43.008	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: cors
-2023-04-18 17:54:43.008	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: dump
-2023-04-18 17:54:43.008	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /metrics --> github.com/zsais/go-gin-prometheus.prometheusHandler.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/ --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/cmdline --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/profile --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /debug/pprof/symbol --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/symbol --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/trace --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/allocs --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/block --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/goroutine --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/heap --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/mutex --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/threadcreate --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
-2023-04-18 17:54:43.009	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /version --> github.com/marmotedu/iam/internal/pkg/server.(*GenericAPIServer).InstallAPIs.func2 (10 handlers)
-2023-04-18 17:54:43.015	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /login --> github.com/appleboy/gin-jwt/v2.(*GinJWTMiddleware).LoginHandler-fm (10 handlers)
-2023-04-18 17:54:43.015	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /logout --> github.com/appleboy/gin-jwt/v2.(*GinJWTMiddleware).LogoutHandler-fm (10 handlers)
-2023-04-18 17:54:43.015	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /refresh --> github.com/appleboy/gin-jwt/v2.(*GinJWTMiddleware).RefreshHandler-fm (10 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /v1/users --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Create-fm (10 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/users --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).DeleteCollection-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/users/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Delete-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/users/:name/change-password --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).ChangePassword-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/users/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Update-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/users --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).List-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/users/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Get-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /v1/policies --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Create-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/policies --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).DeleteCollection-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/policies/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Delete-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/policies/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Update-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/policies --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).List-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/policies/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Get-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /v1/secrets --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Create-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/secrets/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Delete-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/secrets/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Update-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/secrets --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).List-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/secrets/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Get-fm (12 handlers)
-2023-04-18 17:54:43.016	[34mINFO[0m	apiserver	server/genericapiserver.go:166	Start to listening the incoming requests on https address: 0.0.0.0:8443
-2023-04-18 17:54:43.017	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:100	Connecting to redis cluster
-2023-04-18 17:54:43.017	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:189	Creating new Redis connection pool
-2023-04-18 17:54:43.017	[34mINFO[0m	apiserver	storage/redis_cluster.go:232	--> [REDIS] Creating single-node client
-2023-04-18 17:54:43.017	[34mINFO[0m	apiserver	apiserver/grpc.go:32	start grpc server at 0.0.0.0:8081
-2023-04-18 17:54:43.017	[34mINFO[0m	apiserver	server/genericapiserver.go:147	Start to listening the incoming requests on http address: 127.0.0.1:8080
-2023-04-18 17:54:43.034	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:100	Connecting to redis cluster
-2023-04-18 17:54:43.034	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:189	Creating new Redis connection pool
-2023-04-18 17:54:43.034	[34mINFO[0m	apiserver	storage/redis_cluster.go:232	--> [REDIS] Creating single-node client
-2023-04-18 17:54:53.285	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:76][1.269ms] [rows:1] SELECT * FROM `user` WHERE name = 'admin' and status = 1 ORDER BY `user`.`id` LIMIT 1
-2023-04-18 17:54:53.360	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:35][5.207ms] [rows:1] UPDATE `user` SET `instanceID`='user-lingfei',`name`='admin',`extendShadow`='{}',`createdAt`='2021-05-27 18:01:40',`updatedAt`='2023-04-18 17:54:53.355',`status`=1,`nickname`='admin',`password`='$2a$10$WnQD2DCfWVhlGmkQ8pdLkesIGPf9KJB7N1mhSOqulbgN7ZMo44Mv2',`email`='admin@foxmail.com',`phone`='1812884xxxx',`isAdmin`=1,`loginedAt`='2023-04-18 17:54:53.354' WHERE `id` = 1
-2023-04-18 17:54:53.360	[34mINFO[0m	apiserver	middleware/logger.go:134	200 - [127.0.0.1] "76.559781ms POST /login" 	{"requestID": "eeb4274d-0704-4f77-af46-f409c18cc6e8", "username": ""}
+2023-04-19 15:25:11.671	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:76][23.376ms] [rows:1] SELECT * FROM `user` WHERE name = 'admin' and status = 1 ORDER BY `user`.`id` LIMIT 1
+2023-04-19 15:25:11.802	[34mINFO[0m	apiserver	gorm@v1.25.0/callbacks.go:134	[mysql/user.go:35][55.714ms] [rows:1] UPDATE `user` SET `instanceID`='user-lingfei',`name`='admin',`extendShadow`='{}',`createdAt`='2021-05-27 18:01:40',`updatedAt`='2023-04-19 15:25:11.747',`status`=1,`nickname`='admin',`password`='$2a$10$WnQD2DCfWVhlGmkQ8pdLkesIGPf9KJB7N1mhSOqulbgN7ZMo44Mv2',`email`='admin@foxmail.com',`phone`='1812884xxxx',`isAdmin`=1,`loginedAt`='2023-04-19 15:25:11.746' WHERE `id` = 1
+2023-04-19 15:25:11.804	[34mINFO[0m	apiserver	middleware/logger.go:134	200 - [127.0.0.1] "156.318855ms POST /login" 	{"requestID": "e98e5726-4f27-4445-9b4f-0f04735deb61", "username": ""}
+2023-04-19 15:25:36.350	[34mINFO[0m	apiserver	apiserver/grpc.go:37	GRPC server on 0.0.0.0:8081 stopped
+2023-04-19 15:25:36.350	[34mINFO[0m	apiserver	server/genericapiserver.go:174	Server on 0.0.0.0:8443 stopped
+2023-04-19 15:25:36.351	[34mINFO[0m	apiserver	server/genericapiserver.go:155	Server on 127.0.0.1:8080 stopped
+2023-04-19 15:31:12.235	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: recovery
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: logger
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: secure
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: nocache
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: cors
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:105	install middleware: dump
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /metrics --> github.com/zsais/go-gin-prometheus.prometheusHandler.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/ --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/cmdline --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/profile --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /debug/pprof/symbol --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/symbol --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/trace --> github.com/gin-gonic/gin.WrapF.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/allocs --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/block --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/goroutine --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/heap --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/mutex --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /debug/pprof/threadcreate --> github.com/gin-gonic/gin.WrapH.func1 (10 handlers)
+2023-04-19 15:31:12.238	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /version --> github.com/marmotedu/iam/internal/pkg/server.(*GenericAPIServer).InstallAPIs.func2 (10 handlers)
+2023-04-19 15:31:12.242	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /login --> github.com/appleboy/gin-jwt/v2.(*GinJWTMiddleware).LoginHandler-fm (10 handlers)
+2023-04-19 15:31:12.242	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /logout --> github.com/appleboy/gin-jwt/v2.(*GinJWTMiddleware).LogoutHandler-fm (10 handlers)
+2023-04-19 15:31:12.242	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /refresh --> github.com/appleboy/gin-jwt/v2.(*GinJWTMiddleware).RefreshHandler-fm (10 handlers)
+2023-04-19 15:31:12.242	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /v1/users --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Create-fm (10 handlers)
+2023-04-19 15:31:12.242	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/users --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).DeleteCollection-fm (12 handlers)
+2023-04-19 15:31:12.242	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/users/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Delete-fm (12 handlers)
+2023-04-19 15:31:12.242	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/users/:name/change-password --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).ChangePassword-fm (12 handlers)
+2023-04-19 15:31:12.242	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/users/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Update-fm (12 handlers)
+2023-04-19 15:31:12.242	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/users --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).List-fm (12 handlers)
+2023-04-19 15:31:12.242	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/users/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/user.(*UserController).Get-fm (12 handlers)
+2023-04-19 15:31:12.242	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /v1/policies --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Create-fm (12 handlers)
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/policies --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).DeleteCollection-fm (12 handlers)
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/policies/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Delete-fm (12 handlers)
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/policies/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Update-fm (12 handlers)
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/policies --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).List-fm (12 handlers)
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/policies/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/policy.(*PolicyController).Get-fm (12 handlers)
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:86	POST   /v1/secrets --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Create-fm (12 handlers)
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:86	DELETE /v1/secrets/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Delete-fm (12 handlers)
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:86	PUT    /v1/secrets/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Update-fm (12 handlers)
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/secrets --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).List-fm (12 handlers)
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:86	GET    /v1/secrets/:name --> github.com/marmotedu/iam/internal/apiserver/controller/v1/secret.(*SecretController).Get-fm (12 handlers)
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:166	Start to listening the incoming requests on https address: 0.0.0.0:8443
+2023-04-19 15:31:12.243	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:100	Connecting to redis cluster
+2023-04-19 15:31:12.243	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:189	Creating new Redis connection pool
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	storage/redis_cluster.go:232	--> [REDIS] Creating single-node client
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	server/genericapiserver.go:147	Start to listening the incoming requests on http address: 127.0.0.1:8080
+2023-04-19 15:31:12.243	[34mINFO[0m	apiserver	apiserver/grpc.go:32	start grpc server at 0.0.0.0:8081
+2023-04-19 15:31:12.245	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:100	Connecting to redis cluster
+2023-04-19 15:31:12.245	[35mDEBUG[0m	apiserver	storage/redis_cluster.go:189	Creating new Redis connection pool
+2023-04-19 15:31:12.245	[34mINFO[0m	apiserver	storage/redis_cluster.go:232	--> [REDIS] Creating single-node client
+2023-04-19 15:31:26.411	[34mINFO[0m	apiserver	apiserver/grpc.go:37	GRPC server on 0.0.0.0:8081 stopped
+2023-04-19 15:31:26.411	[34mINFO[0m	apiserver	server/genericapiserver.go:174	Server on 0.0.0.0:8443 stopped
+2023-04-19 15:31:26.420	[34mINFO[0m	apiserver	server/genericapiserver.go:155	Server on 127.0.0.1:8080 stopped
