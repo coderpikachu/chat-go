@@ -6,4 +6,4 @@
 // server. It takes a minimal set of dependencies and does not reference
 // implementations, in order to ensure it may be reused by multiple components
 // (such as CLI commands that wish to generate or validate config).
-package options // import "test/00Chat1/1internal/pkg/options"
+package options // import "chat-go/1internal/pkg/options"

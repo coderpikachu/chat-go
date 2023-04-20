@@ -5,30 +5,23 @@
 package apiserver
 
 import (
+	"chat-go/1internal/apiserver/config"
 	"context"
 	"fmt"
-	"test/00Chat1/1internal/apiserver/config"
 
-	pb "github.com/marmotedu/api/proto/apiserver/v1"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials"
-	"google.golang.org/grpc/reflection"
-
-	cachev1 "test/00Chat1/1internal/apiserver/controller/v1/cache"
-	"test/00Chat1/1internal/apiserver/store"
-	"test/00Chat1/1internal/apiserver/store/mysql"
-	genericoptions "test/00Chat1/1internal/pkg/options"
-	genericapiserver "test/00Chat1/1internal/pkg/server"
-	"test/00Chat1/2pkg/log"
-	"test/00Chat1/2pkg/shutdown"
-	"test/00Chat1/2pkg/shutdown/shutdownmanagers/posixsignal"
-	"test/00Chat1/2pkg/storage"
+	"chat-go/1internal/apiserver/store/mysql"
+	genericoptions "chat-go/1internal/pkg/options"
+	genericapiserver "chat-go/1internal/pkg/server"
+	"chat-go/2pkg/log"
+	"chat-go/2pkg/shutdown"
+	"chat-go/2pkg/shutdown/shutdownmanagers/posixsignal"
+	"chat-go/2pkg/storage"
 )
 
 type apiServer struct {
-	gs               *shutdown.GracefulShutdown
-	redisOptions     *genericoptions.RedisOptions
-	gRPCAPIServer    *grpcAPIServer
+	gs           *shutdown.GracefulShutdown
+	redisOptions *genericoptions.RedisOptions
+	//gRPCAPIServer    *grpcAPIServer
 	genericAPIServer *genericapiserver.GenericAPIServer
 }
 
@@ -54,25 +47,25 @@ func createAPIServer(cfg *config.Config) (*apiServer, error) {
 		return nil, err
 	}
 
-	extraConfig, err := buildExtraConfig(cfg)
-	if err != nil {
-		return nil, err
-	}
+	// extraConfig, err := buildExtraConfig(cfg)
+	// if err != nil {
+	// 	return nil, err
+	// }
 
 	genericServer, err := genericConfig.Complete().New()
 	if err != nil {
 		return nil, err
 	}
-	extraServer, err := extraConfig.complete().New()
-	if err != nil {
-		return nil, err
-	}
+	// extraServer, err := extraConfig.complete().New()
+	// if err != nil {
+	// 	return nil, err
+	// }
 
 	server := &apiServer{
 		gs:               gs,
 		redisOptions:     cfg.RedisOptions,
 		genericAPIServer: genericServer,
-		gRPCAPIServer:    extraServer,
+		//gRPCAPIServer:    extraServer,
 	}
 
 	return server, nil
@@ -89,7 +82,7 @@ func (s *apiServer) PrepareRun() preparedAPIServer {
 			_ = mysqlStore.Close()
 		}
 
-		s.gRPCAPIServer.Close()
+		// s.gRPCAPIServer.Close()
 		s.genericAPIServer.Close()
 
 		return nil
@@ -99,7 +92,7 @@ func (s *apiServer) PrepareRun() preparedAPIServer {
 }
 
 func (s preparedAPIServer) Run() error {
-	go s.gRPCAPIServer.Run()
+	// go s.gRPCAPIServer.Run()
 
 	// start shutdown managers
 	if err := s.gs.Start(); err != nil {
@@ -123,28 +116,28 @@ func (c *ExtraConfig) complete() *completedExtraConfig {
 }
 
 // New create a grpcAPIServer instance.
-func (c *completedExtraConfig) New() (*grpcAPIServer, error) {
-	creds, err := credentials.NewServerTLSFromFile(c.ServerCert.CertKey.CertFile, c.ServerCert.CertKey.KeyFile)
-	if err != nil {
-		log.Fatalf("Failed to generate credentials %s", err.Error())
-	}
-	opts := []grpc.ServerOption{grpc.MaxRecvMsgSize(c.MaxMsgSize), grpc.Creds(creds)}
-	grpcServer := grpc.NewServer(opts...)
+// func (c *completedExtraConfig) New() (*grpcAPIServer, error) {
+// 	creds, err := credentials.NewServerTLSFromFile(c.ServerCert.CertKey.CertFile, c.ServerCert.CertKey.KeyFile)
+// 	if err != nil {
+// 		log.Fatalf("Failed to generate credentials %s", err.Error())
+// 	}
+// 	opts := []grpc.ServerOption{grpc.MaxRecvMsgSize(c.MaxMsgSize), grpc.Creds(creds)}
+// 	grpcServer := grpc.NewServer(opts...)
 
-	storeIns, _ := mysql.GetMySQLFactoryOr(c.mysqlOptions)
-	// storeIns, _ := etcd.GetEtcdFactoryOr(c.etcdOptions, nil)
-	store.SetClient(storeIns)
-	cacheIns, err := cachev1.GetCacheInsOr(storeIns)
-	if err != nil {
-		log.Fatalf("Failed to get cache instance: %s", err.Error())
-	}
+// 	storeIns, _ := mysql.GetMySQLFactoryOr(c.mysqlOptions)
+// 	// storeIns, _ := etcd.GetEtcdFactoryOr(c.etcdOptions, nil)
+// 	store.SetClient(storeIns)
+// 	cacheIns, err := cachev1.GetCacheInsOr(storeIns)
+// 	if err != nil {
+// 		log.Fatalf("Failed to get cache instance: %s", err.Error())
+// 	}
 
-	pb.RegisterCacheServer(grpcServer, cacheIns)
+// 	pb.RegisterCacheServer(grpcServer, cacheIns)
 
-	reflection.Register(grpcServer)
+// 	reflection.Register(grpcServer)
 
-	return &grpcAPIServer{grpcServer, c.Addr}, nil
-}
+// 	return &grpcAPIServer{grpcServer, c.Addr}, nil
+// }
 
 func buildGenericConfig(cfg *config.Config) (genericConfig *genericapiserver.Config, lastErr error) {
 	genericConfig = genericapiserver.NewConfig()
@@ -156,9 +149,9 @@ func buildGenericConfig(cfg *config.Config) (genericConfig *genericapiserver.Con
 		return
 	}
 
-	if lastErr = cfg.SecureServing.ApplyTo(genericConfig); lastErr != nil {
-		return
-	}
+	// if lastErr = cfg.SecureServing.ApplyTo(genericConfig); lastErr != nil {
+	// 	return
+	// }
 
 	if lastErr = cfg.InsecureServing.ApplyTo(genericConfig); lastErr != nil {
 		return

@@ -3,4 +3,4 @@
 // license that can be found in the LICENSE file.
 
 // Package app defines an application framework used to create application.
-package app // import "test/00Chat1/2pkg/app"
+package app // import "chat-go/2pkg/app"

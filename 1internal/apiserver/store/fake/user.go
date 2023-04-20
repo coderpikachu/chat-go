@@ -8,15 +8,16 @@ import (
 	"context"
 	"strings"
 
-	v1 "github.com/marmotedu/api/apiserver/v1"
+	v1 "chat-go/4api/apiserver/v1"
+
 	"github.com/marmotedu/component-base/pkg/fields"
 	metav1 "github.com/marmotedu/component-base/pkg/meta/v1"
 	"github.com/marmotedu/component-base/pkg/util/stringutil"
 	"github.com/marmotedu/errors"
 
-	"test/00Chat1/1internal/pkg/code"
-	"test/00Chat1/1internal/pkg/util/gormutil"
-	reflectutil "test/00Chat1/1internal/pkg/util/reflect"
+	"chat-go/1internal/pkg/code"
+	"chat-go/1internal/pkg/util/gormutil"
+	reflectutil "chat-go/1internal/pkg/util/reflect"
 )
 
 type users struct {
@@ -67,11 +68,11 @@ func (u *users) Delete(ctx context.Context, username string, opts metav1.DeleteO
 	u.ds.Lock()
 	defer u.ds.Unlock()
 
-	// delete related policy first
-	pol := newPolicies(u.ds)
-	if err := pol.DeleteByUser(ctx, username, opts); err != nil {
-		return err
-	}
+	// // delete related policy first
+	// pol := newPolicies(u.ds)
+	// if err := pol.DeleteByUser(ctx, username, opts); err != nil {
+	// 	return err
+	// }
 
 	users := u.ds.users
 	u.ds.users = make([]*v1.User, 0)
@@ -91,11 +92,11 @@ func (u *users) DeleteCollection(ctx context.Context, usernames []string, opts m
 	u.ds.Lock()
 	defer u.ds.Unlock()
 
-	// delete related policy first
-	pol := newPolicies(u.ds)
-	if err := pol.DeleteCollectionByUser(ctx, usernames, opts); err != nil {
-		return err
-	}
+	// // delete related policy first
+	// pol := newPolicies(u.ds)
+	// if err := pol.DeleteCollectionByUser(ctx, usernames, opts); err != nil {
+	// 	return err
+	// }
 
 	users := u.ds.users
 	u.ds.users = make([]*v1.User, 0)

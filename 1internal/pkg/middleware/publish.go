@@ -4,59 +4,48 @@
 
 package middleware
 
-import (
-	"context"
-	"net/http"
-	"strings"
+//"chat-go/1internal/authzserver/load"
 
-	"github.com/gin-gonic/gin"
-	"github.com/marmotedu/component-base/pkg/json"
+// // Publish publish a redis event to specified redis channel when some action occurred.
+// func Publish() gin.HandlerFunc {
+// 	return func(c *gin.Context) {
+// 		c.Next()
 
-	"test/00Chat1/1internal/authzserver/load"
-	"test/00Chat1/2pkg/log"
-	"test/00Chat1/2pkg/storage"
-)
+// 		if c.Writer.Status() != http.StatusOK {
+// 			log.L(c).Debugf("request failed with http status code `%d`, ignore publish message", c.Writer.Status())
 
-// Publish publish a redis event to specified redis channel when some action occurred.
-func Publish() gin.HandlerFunc {
-	return func(c *gin.Context) {
-		c.Next()
+// 			return
+// 		}
 
-		if c.Writer.Status() != http.StatusOK {
-			log.L(c).Debugf("request failed with http status code `%d`, ignore publish message", c.Writer.Status())
+// 		var resource string
 
-			return
-		}
+// 		pathSplit := strings.Split(c.Request.URL.Path, "/")
+// 		if len(pathSplit) > 2 {
+// 			resource = pathSplit[2]
+// 		}
 
-		var resource string
+// 		method := c.Request.Method
 
-		pathSplit := strings.Split(c.Request.URL.Path, "/")
-		if len(pathSplit) > 2 {
-			resource = pathSplit[2]
-		}
+// 		switch resource {
+// 		case "policies":
+// 			notify(c, method, load.NoticePolicyChanged)
+// 		case "secrets":
+// 			notify(c, method, load.NoticeSecretChanged)
+// 		default:
+// 		}
+// 	}
+// }
 
-		method := c.Request.Method
+// func notify(ctx context.Context, method string, command load.NotificationCommand) {
+// 	switch method {
+// 	case http.MethodPost, http.MethodPut, http.MethodDelete, http.MethodPatch:
+// 		redisStore := &storage.RedisCluster{}
+// 		message, _ := json.Marshal(load.Notification{Command: command})
 
-		switch resource {
-		case "policies":
-			notify(c, method, load.NoticePolicyChanged)
-		case "secrets":
-			notify(c, method, load.NoticeSecretChanged)
-		default:
-		}
-	}
-}
-
-func notify(ctx context.Context, method string, command load.NotificationCommand) {
-	switch method {
-	case http.MethodPost, http.MethodPut, http.MethodDelete, http.MethodPatch:
-		redisStore := &storage.RedisCluster{}
-		message, _ := json.Marshal(load.Notification{Command: command})
-
-		if err := redisStore.Publish(load.RedisPubSubChannel, string(message)); err != nil {
-			log.L(ctx).Errorw("publish redis message failed", "error", err.Error())
-		}
-		log.L(ctx).Debugw("publish redis message", "method", method, "command", command)
-	default:
-	}
-}
+// 		if err := redisStore.Publish(load.RedisPubSubChannel, string(message)); err != nil {
+// 			log.L(ctx).Errorw("publish redis message failed", "error", err.Error())
+// 		}
+// 		log.L(ctx).Debugw("publish redis message", "method", method, "command", command)
+// 	default:
+// 	}
+// }

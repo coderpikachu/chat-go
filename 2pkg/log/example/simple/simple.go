@@ -4,7 +4,7 @@
 
 package main
 
-import "test/00Chat1/2pkg/log"
+import "chat-go/2pkg/log"
 
 func main() {
 	log.Infof("this is a test log, message: %s", "good")

@@ -13,16 +13,16 @@ We decided to use the same callback pattern in case of handling POSIX signals.
 ## Installation
 
 ```
-go get test/00Chat1/2pkg/shutdown
+go get chat-go/2pkg/shutdown
 ```
 
 ## Documentation
 
-`test/00Chat1/2pkg/shutdown` documentation is available on [godoc](http://godoc.org/test/00Chat1/2pkg/shutdown).
+`chat-go/2pkg/shutdown` documentation is available on [godoc](http://godoc.org/chat-go/2pkg/shutdown).
 
 Both `ShutdownManagers` are also documented:
-- [`PosixSignalManager`](http://godoc.org/test/00Chat1/2pkg/shutdown/shutdownmanagers/posixsignal)
-- [`AwsManager`](http://godoc.org/test/00Chat1/2pkg/shutdown/shutdownmanagers/awsmanager)
+- [`PosixSignalManager`](http://godoc.org/chat-go/2pkg/shutdown/shutdownmanagers/posixsignal)
+- [`AwsManager`](http://godoc.org/chat-go/2pkg/shutdown/shutdownmanagers/awsmanager)
 
 
 ## Example - AWS Autoscale, Scale-in Event
@@ -38,9 +38,9 @@ import (
 	"fmt"
 	"time"
 
-	"test/00Chat1/2pkg/shutdown"
-	"test/00Chat1/2pkg/shutdown/shutdownmanagers/awsmanager"
-	"test/00Chat1/2pkg/shutdown/shutdownmanagers/posixsignal"
+	"chat-go/2pkg/shutdown"
+	"chat-go/2pkg/shutdown/shutdownmanagers/awsmanager"
+	"chat-go/2pkg/shutdown/shutdownmanagers/posixsignal"
 )
 
 func main() {
@@ -95,8 +95,8 @@ import (
 	"fmt"
 	"time"
 
-	"test/00Chat1/2pkg/shutdown"
-	"test/00Chat1/2pkg/shutdown/shutdownmanagers/posixsignal"
+	"chat-go/2pkg/shutdown"
+	"chat-go/2pkg/shutdown/shutdownmanagers/posixsignal"
 )
 
 func main() {
@@ -137,8 +137,8 @@ import (
 	"time"
 	"errors"
 
-	"test/00Chat1/2pkg/shutdown"
-	"test/00Chat1/2pkg/shutdown/shutdownmanagers/posixsignal"
+	"chat-go/2pkg/shutdown"
+	"chat-go/2pkg/shutdown/shutdownmanagers/posixsignal"
 )
 
 func main() {

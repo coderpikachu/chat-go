@@ -13,7 +13,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/mattn/go-isatty"
 
-	"test/00Chat1/2pkg/log"
+	"chat-go/2pkg/log"
 )
 
 // defaultLogFormatter is the default log format function Logger middleware uses.

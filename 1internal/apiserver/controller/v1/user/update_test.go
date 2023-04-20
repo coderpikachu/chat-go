@@ -10,12 +10,13 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	v1 "chat-go/4api/apiserver/v1"
+
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
-	v1 "github.com/marmotedu/api/apiserver/v1"
 	metav1 "github.com/marmotedu/component-base/pkg/meta/v1"
 
-	srvv1 "test/00Chat1/1internal/apiserver/service/v1"
+	srvv1 "chat-go/1internal/apiserver/service/v1"
 )
 
 func TestUserController_Update(t *testing.T) {

@@ -4,15 +4,13 @@
 
 package v1
 
-//go:generate mockgen -self_package=test/00Chat1/1internal/apiserver/service/v1 -destination mock_service.go -package v1 test/00Chat1/1internal/apiserver/service/v1 Service,UserSrv,SecretSrv,PolicySrv
+//go:generate mockgen -self_package=chat-go/1internal/apiserver/service/v1 -destination mock_service.go -package v1 chat-go/1internal/apiserver/service/v1 Service,UserSrv,SecretSrv,PolicySrv
 
-import "test/00Chat1/1internal/apiserver/store"
+import "chat-go/1internal/apiserver/store"
 
 // Service defines functions used to return resource interface.
 type Service interface {
 	Users() UserSrv
-	Secrets() SecretSrv
-	Policies() PolicySrv
 }
 
 type service struct {
@@ -28,12 +26,4 @@ func NewService(store store.Factory) Service {
 
 func (s *service) Users() UserSrv {
 	return newUsers(s)
-}
-
-func (s *service) Secrets() SecretSrv {
-	return newSecrets(s)
-}
-
-func (s *service) Policies() PolicySrv {
-	return newPolicies(s)
 }

@@ -24,7 +24,7 @@ import (
 	"github.com/spf13/pflag"
 	"github.com/stretchr/testify/assert"
 
-	"test/00Chat1/2pkg/log"
+	"chat-go/2pkg/log"
 )
 
 func Test_WithName(t *testing.T) {

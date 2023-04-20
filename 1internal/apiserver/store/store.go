@@ -4,16 +4,13 @@
 
 package store
 
-//go:generate mockgen -self_package=test/00Chat1/1internal/apiserver/store -destination mock_store.go -package store test/00Chat1/1internal/apiserver/store Factory,UserStore,SecretStore,PolicyStore
+//go:generate mockgen -self_package=chat-go/1internal/apiserver/store -destination mock_store.go -package store chat-go/1internal/apiserver/store Factory,UserStore,SecretStore,PolicyStore
 
 var client Factory
 
 // Factory defines the iam platform storage interface.
 type Factory interface {
 	Users() UserStore
-	Secrets() SecretStore
-	Policies() PolicyStore
-	PolicyAudits() PolicyAuditStore
 	Close() error
 }
 

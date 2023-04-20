@@ -3,4 +3,4 @@
 // license that can be found in the LICENSE file.
 
 // Package server defines the generic apiserver used by all iam platform.
-package server // import "test/00Chat1/1internal/pkg/server"
+package server // import "chat-go/1internal/pkg/server"

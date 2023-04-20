@@ -8,7 +8,8 @@ import (
 	"context"
 	"fmt"
 
-	v1 "github.com/marmotedu/api/apiserver/v1"
+	v1 "chat-go/4api/apiserver/v1"
+
 	"github.com/marmotedu/component-base/pkg/json"
 	metav1 "github.com/marmotedu/component-base/pkg/meta/v1"
 	"github.com/marmotedu/component-base/pkg/util/jsonutil"
@@ -41,11 +42,11 @@ func (u *users) Update(ctx context.Context, user *v1.User, opts metav1.UpdateOpt
 
 // Delete deletes the user by the user identifier.
 func (u *users) Delete(ctx context.Context, username string, opts metav1.DeleteOptions) error {
-	// delete related policy first
-	pol := newPolicies(u.ds)
-	if err := pol.DeleteByUser(ctx, username, opts); err != nil {
-		return err
-	}
+	// // delete related policy first
+	// pol := newPolicies(u.ds)
+	// if err := pol.DeleteByUser(ctx, username, opts); err != nil {
+	// 	return err
+	// }
 
 	if _, err := u.ds.Delete(ctx, u.getKey(username)); err != nil {
 		return err
@@ -54,13 +55,13 @@ func (u *users) Delete(ctx context.Context, username string, opts metav1.DeleteO
 	return nil
 }
 
-// DeleteCollection batch deletes the users.
-func (u *users) DeleteCollection(ctx context.Context, usernames []string, opts metav1.DeleteOptions) error {
-	// delete related policy first
-	pol := newPolicies(u.ds)
+// // DeleteCollection batch deletes the users.
+// func (u *users) DeleteCollection(ctx context.Context, usernames []string, opts metav1.DeleteOptions) error {
+// 	// delete related policy first
+// 	pol := newPolicies(u.ds)
 
-	return pol.DeleteCollectionByUser(ctx, usernames, opts)
-}
+// 	return pol.DeleteCollectionByUser(ctx, usernames, opts)
+// }
 
 // Get return an user by the user identifier.
 func (u *users) Get(ctx context.Context, username string, opts metav1.GetOptions) (*v1.User, error) {

@@ -10,7 +10,7 @@ import (
 
 	gomock "github.com/golang/mock/gomock"
 
-	"test/00Chat1/1internal/apiserver/store"
+	"chat-go/1internal/apiserver/store"
 )
 
 func TestNewService(t *testing.T) {
@@ -68,60 +68,6 @@ func Test_service_Users(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := s.Users(); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("service.Users() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
-func Test_service_Secrets(t *testing.T) {
-	ctrl := gomock.NewController(t)
-	defer ctrl.Finish()
-
-	mockFactory := store.NewMockFactory(ctrl)
-	s := &service{
-		store: mockFactory,
-	}
-
-	tests := []struct {
-		name string
-		want SecretSrv
-	}{
-		{
-			name: "default",
-			want: newSecrets(s),
-		},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := s.Secrets(); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("service.Secrets() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
-
-func Test_service_Policies(t *testing.T) {
-	ctrl := gomock.NewController(t)
-	defer ctrl.Finish()
-
-	mockFactory := store.NewMockFactory(ctrl)
-	s := &service{
-		store: mockFactory,
-	}
-
-	tests := []struct {
-		name string
-		want PolicySrv
-	}{
-		{
-			name: "default",
-			want: newPolicies(s),
-		},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := s.Policies(); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("service.Policies() = %v, want %v", got, tt.want)
 			}
 		})
 	}

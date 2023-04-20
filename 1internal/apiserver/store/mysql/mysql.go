@@ -8,14 +8,15 @@ import (
 	"fmt"
 	"sync"
 
-	v1 "github.com/marmotedu/api/apiserver/v1"
+	v1 "chat-go/4api/apiserver/v1"
+
 	"github.com/marmotedu/errors"
 	"gorm.io/gorm"
 
-	"test/00Chat1/1internal/apiserver/store"
-	"test/00Chat1/1internal/pkg/logger"
-	genericoptions "test/00Chat1/1internal/pkg/options"
-	"test/00Chat1/2pkg/db"
+	"chat-go/1internal/apiserver/store"
+	"chat-go/1internal/pkg/logger"
+	genericoptions "chat-go/1internal/pkg/options"
+	"chat-go/2pkg/db"
 )
 
 type datastore struct {
@@ -28,18 +29,6 @@ type datastore struct {
 
 func (ds *datastore) Users() store.UserStore {
 	return newUsers(ds)
-}
-
-func (ds *datastore) Secrets() store.SecretStore {
-	return newSecrets(ds)
-}
-
-func (ds *datastore) Policies() store.PolicyStore {
-	return newPolicies(ds)
-}
-
-func (ds *datastore) PolicyAudits() store.PolicyAuditStore {
-	return newPolicyAudits(ds)
 }
 
 func (ds *datastore) Close() error {
@@ -98,12 +87,12 @@ func cleanDatabase(db *gorm.DB) error {
 	if err := db.Migrator().DropTable(&v1.User{}); err != nil {
 		return errors.Wrap(err, "drop user table failed")
 	}
-	if err := db.Migrator().DropTable(&v1.Policy{}); err != nil {
-		return errors.Wrap(err, "drop policy table failed")
-	}
-	if err := db.Migrator().DropTable(&v1.Secret{}); err != nil {
-		return errors.Wrap(err, "drop secret table failed")
-	}
+	// if err := db.Migrator().DropTable(&v1.Policy{}); err != nil {
+	// 	return errors.Wrap(err, "drop policy table failed")
+	// }
+	// if err := db.Migrator().DropTable(&v1.Secret{}); err != nil {
+	// 	return errors.Wrap(err, "drop secret table failed")
+	// }
 
 	return nil
 }
@@ -115,12 +104,12 @@ func migrateDatabase(db *gorm.DB) error {
 	if err := db.AutoMigrate(&v1.User{}); err != nil {
 		return errors.Wrap(err, "migrate user model failed")
 	}
-	if err := db.AutoMigrate(&v1.Policy{}); err != nil {
-		return errors.Wrap(err, "migrate policy model failed")
-	}
-	if err := db.AutoMigrate(&v1.Secret{}); err != nil {
-		return errors.Wrap(err, "migrate secret model failed")
-	}
+	// if err := db.AutoMigrate(&v1.Policy{}); err != nil {
+	// 	return errors.Wrap(err, "migrate policy model failed")
+	// }
+	// if err := db.AutoMigrate(&v1.Secret{}); err != nil {
+	// 	return errors.Wrap(err, "migrate secret model failed")
+	// }
 
 	return nil
 }

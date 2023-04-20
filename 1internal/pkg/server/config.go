@@ -15,7 +15,7 @@ import (
 	"github.com/marmotedu/component-base/pkg/util/homedir"
 	"github.com/spf13/viper"
 
-	"test/00Chat1/2pkg/log"
+	"chat-go/2pkg/log"
 )
 
 const (
@@ -29,7 +29,7 @@ const (
 // Config is a structure used to configure a GenericAPIServer.
 // Its members are sorted roughly in order of importance for composers.
 type Config struct {
-	SecureServing   *SecureServingInfo
+	//SecureServing   *SecureServingInfo
 	InsecureServing *InsecureServingInfo
 	Jwt             *JwtInfo
 	Mode            string
@@ -79,7 +79,7 @@ type JwtInfo struct {
 // NewConfig returns a Config struct with the default values.
 func NewConfig() *Config {
 	return &Config{
-		Healthz:         true,
+		Healthz:         false,
 		Mode:            gin.ReleaseMode,
 		Middlewares:     []string{},
 		EnableProfiling: true,
@@ -109,7 +109,7 @@ func (c CompletedConfig) New() (*GenericAPIServer, error) {
 	gin.SetMode(c.Mode)
 
 	s := &GenericAPIServer{
-		SecureServingInfo:   c.SecureServing,
+		// SecureServingInfo:   c.SecureServing,
 		InsecureServingInfo: c.InsecureServing,
 		healthz:             c.Healthz,
 		enableMetrics:       c.EnableMetrics,
@@ -130,6 +130,8 @@ func LoadConfig(cfg string, defaultName string) {
 	} else {
 		viper.AddConfigPath(".")
 		viper.AddConfigPath(filepath.Join(homedir.HomeDir(), RecommendedHomeDir))
+		log.Errorf("home: %s", filepath.Join(homedir.HomeDir(), RecommendedHomeDir))
+		log.Errorf("home1: %s", homedir.HomeDir())
 		viper.AddConfigPath("/etc/iam")
 		viper.SetConfigName(defaultName)
 	}

@@ -19,8 +19,8 @@ import (
 	ginprometheus "github.com/zsais/go-gin-prometheus"
 	"golang.org/x/sync/errgroup"
 
-	"test/00Chat1/1internal/pkg/middleware"
-	"test/00Chat1/2pkg/log"
+	"chat-go/1internal/pkg/middleware"
+	"chat-go/2pkg/log"
 )
 
 // GenericAPIServer contains state for an iam api server.
@@ -43,7 +43,8 @@ type GenericAPIServer struct {
 	enableProfiling bool
 	// wrapper for gin.Engine
 
-	insecureServer, secureServer *http.Server
+	insecureServer *http.Server
+	//secureServer *http.Server
 }
 
 func initGenericAPIServer(s *GenericAPIServer) {
@@ -131,13 +132,13 @@ func (s *GenericAPIServer) Run() error {
 	}
 
 	// For scalability, use custom HTTP configuration mode here
-	s.secureServer = &http.Server{
-		Addr:    s.SecureServingInfo.Address(),
-		Handler: s,
-		// ReadTimeout:    10 * time.Second,
-		// WriteTimeout:   10 * time.Second,
-		// MaxHeaderBytes: 1 << 20,
-	}
+	// s.secureServer = &http.Server{
+	// 	Addr:    s.SecureServingInfo.Address(),
+	// 	Handler: s,
+	// 	// ReadTimeout:    10 * time.Second,
+	// 	// WriteTimeout:   10 * time.Second,
+	// 	// MaxHeaderBytes: 1 << 20,
+	// }
 
 	var eg errgroup.Group
 
@@ -157,24 +158,24 @@ func (s *GenericAPIServer) Run() error {
 		return nil
 	})
 
-	eg.Go(func() error {
-		key, cert := s.SecureServingInfo.CertKey.KeyFile, s.SecureServingInfo.CertKey.CertFile
-		if cert == "" || key == "" || s.SecureServingInfo.BindPort == 0 {
-			return nil
-		}
+	// eg.Go(func() error {
+	// 	key, cert := s.SecureServingInfo.CertKey.KeyFile, s.SecureServingInfo.CertKey.CertFile
+	// 	if cert == "" || key == "" || s.SecureServingInfo.BindPort == 0 {
+	// 		return nil
+	// 	}
 
-		log.Infof("Start to listening the incoming requests on https address: %s", s.SecureServingInfo.Address())
+	// 	log.Infof("Start to listening the incoming requests on https address: %s", s.SecureServingInfo.Address())
 
-		if err := s.secureServer.ListenAndServeTLS(cert, key); err != nil && !errors.Is(err, http.ErrServerClosed) {
-			log.Fatal(err.Error())
+	// 	if err := s.secureServer.ListenAndServeTLS(cert, key); err != nil && !errors.Is(err, http.ErrServerClosed) {
+	// 		log.Fatal(err.Error())
 
-			return err
-		}
+	// 		return err
+	// 	}
 
-		log.Infof("Server on %s stopped", s.SecureServingInfo.Address())
+	// 	log.Infof("Server on %s stopped", s.SecureServingInfo.Address())
 
-		return nil
-	})
+	// 	return nil
+	// })
 
 	// Ping the server to make sure the router is working.
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
@@ -199,9 +200,9 @@ func (s *GenericAPIServer) Close() {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 
-	if err := s.secureServer.Shutdown(ctx); err != nil {
-		log.Warnf("Shutdown secure server failed: %s", err.Error())
-	}
+	// if err := s.secureServer.Shutdown(ctx); err != nil {
+	// 	log.Warnf("Shutdown secure server failed: %s", err.Error())
+	// }
 
 	if err := s.insecureServer.Shutdown(ctx); err != nil {
 		log.Warnf("Shutdown insecure server failed: %s", err.Error())

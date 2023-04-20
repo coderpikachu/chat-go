@@ -7,11 +7,12 @@
 package main
 
 import (
-	_ "go.uber.org/automaxprocs"
 	"math/rand"
 	"time"
 
-	"test/00Chat1/1internal/apiserver"
+	_ "go.uber.org/automaxprocs"
+
+	"chat-go/1internal/apiserver"
 )
 
 func main() {

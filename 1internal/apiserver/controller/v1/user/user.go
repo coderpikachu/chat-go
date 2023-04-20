@@ -5,8 +5,8 @@
 package user
 
 import (
-	srvv1 "test/00Chat1/1internal/apiserver/service/v1"
-	"test/00Chat1/1internal/apiserver/store"
+	srvv1 "chat-go/1internal/apiserver/service/v1"
+	"chat-go/1internal/apiserver/store"
 )
 
 // UserController create a user handler used to handle request for user resource.
