@@ -8,6 +8,7 @@ import (
 	"chat-go/1internal/pkg/middleware/auth"
 
 	"github.com/gin-gonic/gin"
+	"github.com/marmotedu/component-base/pkg/core"
 )
 
 func initRouter(g *gin.Engine) {
@@ -17,11 +18,14 @@ func initRouter(g *gin.Engine) {
 
 func installMiddleware(g *gin.Engine) {
 }
+func printHello(c *gin.Context) {
+	core.WriteResponse(c, nil, "hello")
+}
 
 func installController(g *gin.Engine) *gin.Engine {
 	// Middlewares.
 	jwtStrategy, _ := newJWTAuth().(auth.JWTStrategy)
 	g.POST("/login", jwtStrategy.LoginHandler)
-
+	g.POST("/hello", printHello)
 	return g
 }

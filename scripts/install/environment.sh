@@ -4,7 +4,13 @@
 # Use of this source code is governed by a MIT style
 # license that can be found in the LICENSE file.
 
+#test
+T_DIR1=${T_DIR1:-/home/going/workspace/golang/src/chat-go/going}
+T_DIR2=${T_DIR2:-${IAM_ROOT}}
+T_DIR3=${T_DIR3:-${IAM_ROOT}/_output}
 
+MY_DIR=${MY_DIR:-zoo}
+mkdir -p ${MY_DIR}
 
 # IAM 项目源码根目录
 IAM_ROOT=$(dirname "${BASH_SOURCE[0]}")/../..
@@ -47,8 +53,10 @@ MONGO_PORT=${MONGO_PORT:-27017} # MongoDB 端口
 MONGO_USERNAME=${MONGO_USERNAME:-iam} # MongoDB 用户名
 MONGO_PASSWORD=${MONGO_PASSWORD:-${PASSWORD}} # MongoDB 密码
 
-MY_DIR=${MY_DIR:-zoo}
+
 # iam 配置
+
+
 IAM_DATA_DIR=${IAM_DATA_DIR:-${IAM_ROOT}/${MY_DIR}/data/iam} # iam 各组件数据目录
 IAM_INSTALL_DIR=${IAM_INSTALL_DIR:-${IAM_ROOT}/${MY_DIR}/opt/iam} # iam 安装文件存放目录
 IAM_CONFIG_DIR=${IAM_CONFIG_DIR:-${IAM_ROOT}/${MY_DIR}/etc/iam} # iam 配置文件存放目录
