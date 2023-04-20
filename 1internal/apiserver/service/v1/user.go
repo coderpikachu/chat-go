@@ -7,7 +7,8 @@ package v1
 import (
 	"context"
 
-	v1 "github.com/marmotedu/api/apiserver/v1"
+	v1 "chat-go/4api/apiserver/v1"
+
 	metav1 "github.com/marmotedu/component-base/pkg/meta/v1"
 	"github.com/marmotedu/errors"
 

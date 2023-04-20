@@ -13,7 +13,7 @@ import (
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
-	v1 "github.com/marmotedu/api/apiserver/v1"
+	v1 "chat-go/4api/apiserver/v1"
 	v10 "github.com/marmotedu/component-base/pkg/meta/v1"
 )
 

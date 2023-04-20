@@ -11,12 +11,14 @@ import (
 	"strings"
 	"time"
 
+	v1 "chat-go/4api/apiserver/v1"
+
 	jwt "github.com/appleboy/gin-jwt/v2"
 	"github.com/gin-gonic/gin"
-	v1 "github.com/marmotedu/api/apiserver/v1"
 	metav1 "github.com/marmotedu/component-base/pkg/meta/v1"
 	"github.com/spf13/viper"
 
+	userC "chat-go/1internal/apiserver/controller/v1/user"
 	"chat-go/1internal/apiserver/store"
 	"chat-go/1internal/pkg/middleware"
 	"chat-go/1internal/pkg/middleware/auth"
@@ -112,11 +114,16 @@ func authenticator() func(c *gin.Context) (interface{}, error) {
 		}
 
 		// Get the user information by the login username.
-		user, err := store.Client().Users().Get(c, login.Username, metav1.GetOptions{})
+		//user, err := store.Client().Users().Get(c, login.Username, metav1.GetOptions{})
+		userController := userC.NewUserController(store.Client())
+		userController.Get(c)
+		user, _ := parseWithResponse(c)
 		if err != nil {
 			log.Errorf("get user information failed: %s", err.Error())
 
 			return "", jwt.ErrFailedAuthentication
+		} else {
+			log.Infof("%s log in", user.Name)
 		}
 
 		// Compare the login password with the user password.
@@ -130,7 +137,16 @@ func authenticator() func(c *gin.Context) (interface{}, error) {
 		return user, nil
 	}
 }
+func parseWithResponse(c *gin.Context) (*v1.User, error) {
+	user := &v1.User{}
+	if err := c.ShouldBindJSON(&user); err != nil {
+		log.Errorf("parse login parameters: %s", err.Error())
 
+		return &v1.User{}, jwt.ErrFailedAuthentication
+	}
+
+	return user, nil
+}
 func parseWithHeader(c *gin.Context) (loginInfo, error) {
 	auth := strings.SplitN(c.Request.Header.Get("Authorization"), " ", 2)
 	if len(auth) != 2 || auth[0] != "Basic" {
